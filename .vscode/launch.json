@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "Debug",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceRoot}/build/vscode-debug.js",
+    "stopOnEntry": false,
+    "args": [],
+    "cwd": "${workspaceRoot}",
+    "env": {
+      "NODE_ENV": "development",
+      "DEBUG": "*"
+    },
+    "console": "integratedTerminal",
+    "sourceMaps": true,
+    "outFiles": ["${workspaceRoot}/build/**/*.js"],
+    "protocol": "inspector"
+  }]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "http://data.vostronet.com/target-schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "schema target",
+  "type": "object",
+  "required": ["id", "name", "devices"],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

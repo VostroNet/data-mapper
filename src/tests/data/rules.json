@@ -1,0 +1,55 @@
+{
+  "input": "https://data.vostronet.com/source-schema",
+  "output": "https://data.vostronet.com/target-schema",
+  "connections": [{
+    "id": "conn-1",
+    "source": "input.firstName",
+    "target": "1-js.firstName"
+  }, {
+    "id": "conn-2",
+    "source": "input.lastName",
+    "target": "1-js.lastName"
+  }, {
+    "id": "conn-3",
+    "source": "1-js.output.name",
+    "target": "output.name"
+  }, {
+    "id": "conn-4",
+    "source": "input.id",
+    "target": "output.id"
+  }, {
+    "id": "conn-5",
+    "source": "input.devices",
+    "target": "2-map.input"
+  }, {
+    "id": "conn-6",
+    "source": "2-map.output",
+    "target": "output.deviceIds"
+  }],
+  "components": [{
+    "id": "1-js",
+    "type": "exec",
+    "input": {
+      "lastName": {"type": "string"},
+      "firstName": {"type": "string"}
+    },
+    "output": {
+      "name": "string"
+    },
+    "script": "return {name: input.firstName + \" \" + input.lastName};"
+  }, {
+    "id": "2-map",
+    "type": "map",
+    "input": {
+      "$ref": "http://data.vostronet.com/source-schema#/definitions/device"
+    },
+    "output": {
+      "type": "number"
+    },
+    "connections": [{
+      "id": "conn-7",
+      "source": "input.id",
+      "target": "output"
+    }]
+  }]
+}

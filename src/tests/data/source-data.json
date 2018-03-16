@@ -1,0 +1,12 @@
+{
+  "id": 123,
+  "firstName": "firstName",
+  "lastName": "lastName",
+  "devices": [{
+    "id": 432,
+    "name": "Device 1"
+  }, {
+    "id": 433,
+    "name": "Device 2"
+  }]
+}
